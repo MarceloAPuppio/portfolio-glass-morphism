@@ -40,7 +40,7 @@ h1 {
 }
 /* Estilos sobre el body */
 body {
-  background: var(--bg);
+  background: var(--bg) fixed no-repeat;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -52,7 +52,7 @@ body::after {
   height: 10px;
   width: 10px;
   background: var(--secundario);
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
   z-index: -1;
   box-shadow: 1rem 0 0 var(--secundario), 2rem 0 0 var(--secundario),
@@ -81,18 +81,54 @@ body::after {
 */
 
 .main {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-content: center;
+  display: grid;
+  place-items: center;
+  position: relative;
 }
-/*1- Section home*/
 
-.section-home {
-  height: 92%;
-  width: 88%;
+/*
+Botonera menú desplegable
+*/
+.botoneraMobile {
+  position: fixed;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--glasslight);
+  border: solid rgba(245, 245, 245, 0.397) 2px;
+  right: 2rem;
+  top: 2.5rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+.botonera-ornamento {
+  position: relative;
+  width: 1.2rem;
+  height: 0.2rem;
+  background: rgb(245, 245, 245);
+  box-shadow: 0 0 0.8px var(--text-color);
+}
+.botonera-ornamento::before,
+.botonera-ornamento::after {
+  box-shadow: 0 0 0.8px var(--text-color);
+  content: "";
+  width: 1.2rem;
+  height: 0.2rem;
+  background: rgb(245, 245, 245);
+  position: absolute;
+}
+.botonera-ornamento::before {
+  top: -0.5rem;
+}
+.botonera-ornamento::after {
+  top: 0.5rem;
+}
+
+.section {
+  position: relative;
+  height: 92vh;
+  width: 88vw;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -100,6 +136,12 @@ body::after {
   background: var(--glasslight);
   backdrop-filter: blur(3px);
   border-radius: 0.3rem;
+  margin: 1.5rem 0;
+}
+/*1- Section home*/
+
+.section-home {
+  /* display: none; */
 }
 
 .section-home__title {
@@ -177,6 +219,73 @@ body::after {
   max-width: 100%;
   height: auto;
   filter: grayscale(1);
+}
+
+/*2- Section about*/
+.section-about {
+  align-content: flex-start;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+.section-about__description {
+  padding: 0 2.2rem;
+  display: inline-block;
+  text-align: justify;
+}
+
+/* <div class="skills-containter">
+<div class="skill-container"  data-name="HTML5">
+<div class="skill-progress"></div>
+</div>
+</div> */
+.skills-containter {
+  margin-top: 2rem;
+}
+.skill-container {
+  width: 12rem;
+  height: 0.5rem;
+  border-radius: 0.2rem;
+  background: var(--glasslight);
+  position: relative;
+  margin: 1.5rem auto;
+}
+.skill-container::before {
+  content: attr(data-name);
+  position: absolute;
+  left: 0rem;
+  top: -1.2rem;
+  font-size: 0.8rem;
+}
+.skill-progress {
+  width: 70%;
+  height: 100%;
+  background: var(--primario2);
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+
+.skill-progress--HTML5 {
+  width: 80%;
+  /* background: rgb(238, 124, 17); */
+}
+.skill-progress--CSS3 {
+  width: 80%;
+  /* background: rgb(57, 105, 196); */
+}
+.skill-progress--JS {
+  width: 70%;
+  /* background: var(--terciairo); */
+}
+.skill-progress--React {
+  width: 60%;
+  /* background: rgb(77, 139, 255); */
+}
+.skill-progress--Firebase {
+  width: 25%;
+  /* background: rgb(247, 189, 81); */
+}
+.skill-progress--Bootstrap {
+  width: 80%;
+  /* background: var(--Primario1); */
 }
 /* 
 section-home
