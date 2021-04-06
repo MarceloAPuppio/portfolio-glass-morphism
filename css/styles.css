@@ -1,0 +1,206 @@
+:root {
+  --terciairo: #eced9f;
+  --secundario: #c5ed9f;
+  --secundariosuave: #c5ed9f4f;
+  --Primario1: #926bb7;
+  --primario2: #c79fed;
+  --primario3: #d6bcef;
+  --primario4: #eadcf8;
+  --text-color: #505050;
+  --glasslight: rgba(255, 255, 255, 0.4);
+  --bg: linear-gradient(
+    -120deg,
+    var(--primario3) 10%,
+    var(--primario2) 50%,
+    var(--Primario1) 100%
+  );
+}
+
+/*Seteos iniciales*/
+* {
+  box-sizing: border-box;
+}
+
+body,
+main,
+section,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/*Tools*/
+.centrado {
+  text-align: center;
+  margin: 0 auto;
+}
+.espaciado-vertical {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/* Estilos sobre el body */
+body {
+  background: var(--bg);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Noto Sans", sans-serif;
+}
+body::before,
+body::after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background: var(--secundario);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 1rem 0 0 var(--secundario), 2rem 0 0 var(--secundario),
+    3rem 0 0 var(--secundario), 0 1rem 0 var(--secundario),
+    0 2rem 0 var(--secundario), 0 3rem 0 var(--secundario),
+    1rem 1rem 0 var(--secundario), 1rem 2rem 0 var(--secundario),
+    1rem 3rem 0 var(--secundario), 2rem 1rem 0 var(--secundario),
+    2rem 2rem 0 var(--secundario), 2rem 3rem 0 var(--secundario),
+    3rem 1rem 0 var(--secundario), 3rem 2rem 0 var(--secundario),
+    3rem 3rem 0 var(--secundario);
+}
+
+body::before {
+  left: 1rem;
+  top: 1rem;
+}
+body::after {
+  right: 4rem;
+  bottom: 4rem;
+}
+
+/* Estilos sobre el main
+        1- Section home
+        2- Section about
+        3- Section.... 
+*/
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+/*1- Section home*/
+
+.section-home {
+  height: 92%;
+  width: 88%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  background: var(--glasslight);
+  backdrop-filter: blur(3px);
+  border-radius: 0.3rem;
+}
+
+.section-home__title {
+  font-size: 2.5rem;
+  width: 70%;
+}
+.section-home__subtitle {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.section-home__icon-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-container {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  border: solid var(--glasslight) 0.5px;
+  transition: all 0.3s ease-in-out;
+  margin: 0.5rem;
+}
+.social-container:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 10px rgba(243, 243, 243, 0.212), -1px -1px 2px whitesmoke;
+}
+
+.social-container::before {
+  position: absolute;
+  content: "";
+  height: 2.5rem;
+  width: 1rem;
+  background: var(--glasslight);
+  transform: skew(-60deg);
+  left: -4rem;
+  transition: transform 0.5s ease-in-out;
+}
+.social-container:hover::before {
+  transform: translateX(18rem) skew(-60deg);
+}
+
+.social-container__anchor {
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+}
+.social-container__icon {
+  font-size: 1.5rem;
+  color: var(--Primario1);
+}
+/* <picture class="section-home__img-container">
+<img class="profile-img" src="images/foto.png" alt="">
+</picture> */
+
+.section-home__img-container {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: var(--glasslight);
+  overflow: hidden;
+}
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1);
+}
+/* 
+section-home
+quizás lo use para desktop
+display: grid;
+  grid-gap: 0.5rem;
+  place-items: center;
+  grid-template-columns: repeat(2, 3rem);
+  grid-template-rows: repeat(4, 3rem);
+  grid-template-areas:
+    "a b"
+    "e f "
+    "k l"
+    "o p";
+}
+.a {
+  grid-area: a;
+}
+.f {
+  grid-area: f;
+}
+.k {
+  grid-area: k;
+}
+.p {
+  grid-area: p;
+} */
