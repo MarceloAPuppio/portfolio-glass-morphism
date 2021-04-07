@@ -366,9 +366,9 @@ Botonera menú desplegable
   display: grid;
   place-items: center;
 }
-/* .section-works__card:hover .section-works__card__img {
-  filter: grayscale(1);
-} */
+.section-works__card:hover .section-works__card__img {
+  filter: grayscale(0.6);
+}
 .section-works__card__img-container:hover
   .section-works__card__img-container__epigrafe {
   bottom: 0;
