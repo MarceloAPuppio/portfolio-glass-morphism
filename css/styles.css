@@ -45,6 +45,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Noto Sans", sans-serif;
+  color: var(--text-color);
 }
 body::before,
 body::after {
@@ -74,6 +75,65 @@ body::after {
   bottom: 4rem;
 }
 
+.darkmode {
+  --text-color: #e2e2e2;
+  --bg: #131111;
+  --glasslight: rgba(255, 255, 255, 0.055);
+}
+.darkmode .profile-img {
+  filter: grayscale(0.4);
+}
+/* <div class="btn-darkmode">
+        <label class="btn-darkmode__wrapper">
+            <input class="btn-darkmode__button" type="checkbox" name="" id="">
+            <span class="btn-darkmode__ornamento"> </span>
+        </label>
+    </div> */
+.btn-darkmode {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+}
+.btn-darkmode__wrapper {
+  width: 2.5rem;
+  height: 1.1rem;
+  background: var(--text-color);
+  border-radius: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  color: var(--terciairo);
+  padding: 0.1rem;
+}
+.btn-darkmode__icon {
+  font-size: 0.8rem;
+}
+.btn-darkmode__icon:nth-child(1) {
+  color: rgb(0, 0, 0);
+}
+.btn-darkmode__icon:nth-child(2) {
+  color: var(--terciairo);
+}
+.btn-darkmode__ornamento {
+  position: absolute;
+  display: inline-block;
+  left: -0.1rem;
+  top: -0.15rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--Primario1);
+  border: 1px solid var(--glasslight);
+  transition: transform 0.2s ease-in-out;
+}
+.btn-darkmode__button {
+  display: none;
+}
+.btn-darkmode__button:checked + .btn-darkmode__ornamento {
+  transform: translateX(1.4rem);
+}
 /* Estilos sobre el main
         1- Section home
         2- Section about
@@ -204,9 +264,6 @@ Botonera menú desplegable
   font-size: 1.5rem;
   color: var(--Primario1);
 }
-/* <picture class="section-home__img-container">
-<img class="profile-img" src="images/foto.png" alt="">
-</picture> */
 
 .section-home__img-container {
   width: 7rem;
@@ -233,11 +290,6 @@ Botonera menú desplegable
   text-align: justify;
 }
 
-/* <div class="skills-containter">
-<div class="skill-container"  data-name="HTML5">
-<div class="skill-progress"></div>
-</div>
-</div> */
 .skills-containter {
   margin-top: 2rem;
 }
@@ -265,29 +317,90 @@ Botonera menú desplegable
 
 .skill-progress--HTML5 {
   width: 80%;
-  /* background: rgb(238, 124, 17); */
 }
 .skill-progress--CSS3 {
   width: 80%;
-  /* background: rgb(57, 105, 196); */
 }
 .skill-progress--JS {
   width: 70%;
-  /* background: var(--terciairo); */
 }
 .skill-progress--React {
   width: 60%;
-  /* background: rgb(77, 139, 255); */
 }
 .skill-progress--Firebase {
   width: 25%;
-  /* background: rgb(247, 189, 81); */
 }
 .skill-progress--Bootstrap {
   width: 80%;
-  /* background: var(--Primario1); */
+}
+
+/*3- Section works*/
+.section-works {
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.section-works__cards-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-flow: column wrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.section-works__card {
+  width: 100%;
+  height: 100%;
+  margin: 0 1rem 0 0;
+  display: grid;
+  place-items: center;
+}
+.section-works__card__img {
+  border-radius: 1rem;
+  max-width: 90%;
+  height: auto;
+}
+
+.section-works__card__anchor {
+  position: relative;
+  text-decoration: none;
+  color: var(--Primario1);
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  border: solid var(--glasslight) 0.5px;
+  transition: all 0.3s ease-in-out;
+}
+.section-works__card__anchor:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 10px rgba(243, 243, 243, 0.212), -1px -1px 2px whitesmoke;
+}
+
+.section-works__card__anchor::before {
+  position: absolute;
+  content: "";
+  height: 2.5rem;
+  width: 1rem;
+  background: var(--glasslight);
+  transform: skew(-60deg);
+  left: -4rem;
+  transition: transform 0.5s ease-in-out;
+}
+.section-works__card__anchor:hover::before {
+  transform: translateX(18rem) skew(-60deg);
+}
+
+/*hacerlo visible para desktop*/
+::-webkit-scrollbar {
+  display: none;
 }
 /* 
+
 section-home
 quizás lo use para desktop
 display: grid;

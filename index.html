@@ -12,7 +12,8 @@
      <!-- Font Awesome -->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
-<body>
+<body >
+ 
     <!-- Esto va a ser para la versión desktop -->
     <!-- <header style="display: none;">
         <nav>
@@ -24,9 +25,15 @@
         </nav>
     </header> -->
     <main class="main">
-        <div class="botoneraMobile">
-            <span class="botonera-ornamento"></span>
+        <div class="btn-darkmode">
+            <label class="btn-darkmode__wrapper" for="buttondarkmode"><i class="fas fa-moon btn-darkmode__icon"></i><i class="fas fa-sun btn-darkmode__icon"></i>
+                <input class="btn-darkmode__button" type="checkbox" name="buttondarkmode" id="buttondarkmode">
+                <span class="btn-darkmode__ornamento"></span>
+            </label>
         </div>
+        <!-- <div class="botoneraMobile">
+            <span class="botonera-ornamento"></span>
+        </div> -->
         <section class="section section-home">
             <h1 class="section-home__title centrado espaciado-vertical">Marcelo Puppio</h1>
             <picture class="section-home__img-container centrado espaciado-vertical">
@@ -90,11 +97,27 @@
             </div>
         </section>   
         <section class="section section-works">
-            <h1 class="section-about__title centrado">
-                Mis Trabajos
-            </h1>
-         
+            <h1 class="section-works__title centrado">Mis Trabajos</h1>
+            <div class="section-works__cards-container">
+                <div class="section-works__card">
+                    <img class="section-works__card__img" src="./images/projects/whatchatt.png" alt="imagen de proyecto whatchapp, se ve una conversacion entre distintas personas">
+                   <a class="section-works__card__anchor" href="https://puppio-chat.web.app/" target="_blank">Ver sitio</a>     
+                </div>
+                <div class="section-works__card">
+                    <img class="section-works__card__img" src="./images/projects/badcat.png" alt="imagen de proyecto badcat. Es una especie de marketplace">
+                   <a class="section-works__card__anchor" href="https://sh-reto5.web.app/" target="_blank">Ver sitio</a>     
+                </div>
+                <div class="section-works__card">
+                    <img class="section-works__card__img" src="./images/projects/tracking.png" alt=" imagen de proyecto tracking. Se ve en un diseño neuromorfista una hoja de entrada de datos personales para trackeo de medicamentos">
+                   <a class="section-works__card__anchor" href="https://messirve-pastillas.web.app/" target="_blank">Ver sitio</a>     
+                </div>
+                <div class="section-works__card">
+                    <img class="section-works__card__img" src="./images/projects/listadecompras.png" alt="imagen de proyecto lista de compras. Es una aplicacion para anotar productos para comprar en el supermercado">
+                   <a  class="section-works__card__anchor" href="https://puppio-reto3.web.app/" target="_blank">Ver sitio</a>     
+                </div>
+            </div>
         </section>   
     </main>
+    <script src="./js/index.js"></script>
 </body>
 </html>
