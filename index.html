@@ -15,15 +15,17 @@
 <body >
  
     <!-- Esto va a ser para la versión desktop -->
-    <!-- <header style="display: none;">
+    <header class="desktop-header">
         <nav>
-            <ul>
-                <li>Home</li>
-                <li>Sobre mi</li>
-                <li>Mis trabajos</li>
+            <ul class="desktop-header__list">
+                <li  class="desktop-header__list__items"><a href="#home">Home</a> </li>
+                <li class="desktop-header__list__items"><a href="#about">Sobre mi</a> </li>
+                <li class="desktop-header__list__items"><a href="#works">Mis trabajos</a></li>
+                <li class="desktop-header__list__items"><a href="#">Contacto</a></li>
+           
             </ul>
         </nav>
-    </header> -->
+    </header>
     <main class="main">
         <div class="btn-darkmode">
             <label class="btn-darkmode__wrapper" for="buttondarkmode"><i class="fas fa-moon btn-darkmode__icon"></i><i class="fas fa-sun btn-darkmode__icon"></i>
@@ -34,7 +36,7 @@
         <!-- <div class="botoneraMobile">
             <span class="botonera-ornamento"></span>
         </div> -->
-        <section class="section section-home">
+        <section class="section section-home" id="home">
             <h1 class="section-home__title centrado espaciado-vertical">Marcelo Puppio</h1>
             <picture class="section-home__img-container centrado espaciado-vertical">
                 <img class="profile-img" src="images/foto.png" alt="">
@@ -64,7 +66,7 @@
           </div>
 
         </section>
-        <section class="section section-about">
+        <section class="section section-about" id="about">
             <h1 class="section-about__title centrado">
                 Sobre mi
             </h1>
@@ -96,25 +98,38 @@
                 </div>
             </div>
         </section>   
-        <section class="section section-works">
+        <section class="section section-works" id="works">
             <h1 class="section-works__title centrado">Mis Trabajos</h1>
             <div class="section-works__cards-container">
                 <div class="section-works__card">
-                    <img class="section-works__card__img" src="./images/projects/whatchatt.png" alt="imagen de proyecto whatchapp, se ve una conversacion entre distintas personas">
+                    <figure class="section-works__card__img-container">
+                        <img class="section-works__card__img" src="./images/projects/whatchatt.png" alt="imagen de proyecto whatchapp, se ve una conversacion entre distintas personas">
+                        <figcaption class="section-works__card__img-container__epigrafe"> <p>Se ha utilizado Firebase para hacer login con Google, y Firebase realtime database para lograr una conversación "fluída" entre los usuarios </p></figcaption>
+                    </figure>
                    <a class="section-works__card__anchor" href="https://puppio-chat.web.app/" target="_blank">Ver sitio</a>     
                 </div>
                 <div class="section-works__card">
-                    <img class="section-works__card__img" src="./images/projects/badcat.png" alt="imagen de proyecto badcat. Es una especie de marketplace">
+                    <figure class="section-works__card__img-container">
+                        <img class="section-works__card__img" src="./images/projects/badcat.png" alt="imagen de proyecto badcat. Es una especie de marketplace">
+                        <figcaption class="section-works__card__img-container__epigrafe"> <p>Marketplace consumiendo la API de FakeStoreApi. Uso de LocalStorage</p></figcaption>
+                    </figure>
                    <a class="section-works__card__anchor" href="https://sh-reto5.web.app/" target="_blank">Ver sitio</a>     
                 </div>
                 <div class="section-works__card">
-                    <img class="section-works__card__img" src="./images/projects/tracking.png" alt=" imagen de proyecto tracking. Se ve en un diseño neuromorfista una hoja de entrada de datos personales para trackeo de medicamentos">
+                    <figure class="section-works__card__img-container">
+                        <img class="section-works__card__img" src="./images/projects/tracking.png" alt=" imagen de proyecto tracking. Se ve en un diseño neuromorfista una hoja de entrada de datos personales para trackeo de medicamentos">
+                        <figcaption class="section-works__card__img-container__epigrafe"> <p>Proyecto realizado en React JS. Estilo Neuromorphism</p></figcaption>
+                    </figure>
                    <a class="section-works__card__anchor" href="https://messirve-pastillas.web.app/" target="_blank">Ver sitio</a>     
                 </div>
                 <div class="section-works__card">
-                    <img class="section-works__card__img" src="./images/projects/listadecompras.png" alt="imagen de proyecto lista de compras. Es una aplicacion para anotar productos para comprar en el supermercado">
-                   <a  class="section-works__card__anchor" href="https://puppio-reto3.web.app/" target="_blank">Ver sitio</a>     
+                    <figure class="section-works__card__img-container">
+                        <img class="section-works__card__img" src="./images/projects/listadecompras.png" alt="imagen de proyecto lista de compras. Es una aplicacion para anotar productos para comprar en el supermercado">
+                        <figcaption class="section-works__card__img-container__epigrafe"> <p>Se ha utilizado Firebase para hacer login con Google, y firebase realtime database para lograr el efecto del chat</p></figcaption>
+                    </figure>
+                   <a class="section-works__card__anchor" href="https://puppio-reto3.web.app/" target="_blank">Ver sitio</a>     
                 </div>
+       
             </div>
         </section>   
     </main>
