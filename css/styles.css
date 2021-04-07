@@ -446,6 +446,40 @@ Botonera menú desplegable
 }
 
 /*MEDIA QUERIES*/
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .section {
+    height: auto;
+  }
+  .section-works {
+    height: 125vh;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+  .section-works__cards-container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: hidden;
+    justify-content: center;
+    align-content: flex-start;
+    overflow-y: auto;
+  }
+  .section-works__card {
+    width: 11rem;
+    height: 22rem;
+    margin: 0.5rem;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .section-works__card__img {
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   html {
     font-size: 24px;
