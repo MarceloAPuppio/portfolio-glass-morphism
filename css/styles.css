@@ -53,6 +53,7 @@ body {
   overflow-x: hidden;
   font-family: "Noto Sans", sans-serif;
   color: var(--text-color);
+  transition: all 0.4s ease-in-out;
 }
 body::before,
 body::after {
